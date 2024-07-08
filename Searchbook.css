@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria;
+}
+
+body {
+
+    color: aliceblue;
+    background-image: url('pexels-cottonbro-4855378.jpg'); 
+    background-size:cover;
+    background-position:center;
+    height: 125vh; 
+    justify-content: center;
+
+}
+
+header nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookgallery-link {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px 7px;
+    background-color: #312d22;
+    margin-left:  31px;
+    position: absolute;
+  }
+
+
+
+  .bookgallery-link:hover {
+    text-decoration: none;
+    color: rgb(161, 152, 152);
+    background-color: white;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid #745142;
+    padding: 5px 7px;
+  }
+
+
+header nav .form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.form input[type="text"], button[type="submit"] {
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+  
+}
+
+.form button[type="submit"] {
+    background-color: rgb(112, 86, 77);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: white;
+}
+
+.form button[type="submit"]:hover {
+    background-color: rgb(24, 11, 1);
+}
+
+.ikigai{
+font-size: 21px;
+position: absolute;
+left:600px;
+bottom: 390px;
+}
+.quote{
+    font-size: 21px;
+    position: absolute;
+    left:650px;
+    bottom: 365px;
+}
+
+.results-container {
+    text-align: center;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    place-items: center;
+}
+
+
+.book-card:hover{
+
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+.book-card {
+    border: 1px solid #83c3cc;
+    background-color: beige;
+    padding: 20px;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #96afc3;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 3px gray;
+}
+
+.book-cover {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.no-cover {
+    width: 120px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #888;
+    
+}
+
+
+.booksearchbtn{
+
+    padding: 10px;
+    border: 1px solid;
+    background-color: #6d7491;
+    color: white;
+ 
+}
+
+.booksearchbtn:hover{
+
+    padding: 10px;
+    border: 1px solid #899885;
+    background-color: white;
+    color: #8b74aa;
+
+}
+
+
+
+
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 10%;
+  }
+  
+  .spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .no-results {
+   
+    font-size: 17px;
+    position: absolute;
+    left:450px;
+    bottom: 600px;
+  }
+.no-search{
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 558px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav h1 {
+        margin-bottom: 10px;
+    }
+
+    .form input[type="text"], button[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .results-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .book-card {
+        width: 200px;
+        height: 350px;
+    }
+
+    .book-cover, .no-cover {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form input[type="text"], button[type="submit"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .results-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    }
+
+    .book-card {
+        width: 150px;
+        height: 300px;
+    }
+
+    .book-cover, .no-cover {
+        width: 80px;
+        height: 120px;
+    }
+}
+
+
+
+
+.suggestion-box {
+    position: absolute;
+   
+    top: 11.5%;
+    left: 73.5%;
+    width:239px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+
+  }
+  
+  .suggestion-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .suggestion-box li {
+    padding: 10px;
+  }
+  
+  .suggestion-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .suggestion-box button:hover {
+    color: gray;
+  }
+   
